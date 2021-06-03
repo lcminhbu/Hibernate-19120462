@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="dean"
+name="Pojo.Lop" table="lop">
+<id name="maLop" type="string">
+<column length="8" name="malop"/>
+<generator class="assigned"/>
+</id>
+<property name="soSV" type="int">
+<column length="3" name="sosv"/>
+</property>
+
+<property name="soSVNu" type="int">
+<column length="3" name="sosvnu"/>
+</property>
+
+<property name="soSVNam" type="int">
+<column length="3" name="sosvnam"/>
+</property>
+
+<property name="hocKi" type="string">
+<column length="3" name="hocki"/>
+</property>
+
+<property name="namHoc" type="string">
+<column length="10" name="namhoc"/>
+</property>
+<property name="tenLop" type="string">
+<column length="50" name="tenlop"/>
+</property>
+</class>
+</hibernate-mapping>

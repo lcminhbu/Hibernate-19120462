@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="dean"
+name="Pojo.SinhVien_Lop" table="sinhvien_lop">
+<id name="id" type="string">
+<column length="8" name="masv"/>
+<generator class="assigned"/>
+</id>
+<property name="cmnd" type="string">
+<column length="12" name="cmnd"/>
+</property>
+<property name="maLop" type="string">
+<column length="8" name="malop"/>
+</property>
+<property name="hocKi" type="string">
+<column length="3" name="hocki"/>
+</property>
+<property name="namHoc" type="string">
+<column length="10" name="namhoc"/>
+</property>
+</class>
+</hibernate-mapping>

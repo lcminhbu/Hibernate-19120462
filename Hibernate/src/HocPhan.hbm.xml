@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="dean"
+name="Pojo.HocPhan" table="hocphan">
+<id name="maHocPhan" type="string">
+<column length="10" name="mahp"/>
+<generator class="assigned"/>
+</id>
+<property name="hocKi" type="string">
+<column length="3" name="hocki"/>
+</property>
+<property name="namHoc" type="string">
+<column length="10" name="namhoc"/>
+</property>
+<property name="tenHocPhan" type="string">
+<column length="50" name="tenhp"/>
+</property>
+<property name="soSlotToiDa" type="int">
+<column length="3" name="soslottoida"/>
+</property>
+<property name="ngayHoc" type="string">
+<column length="10" name="ngayhoc"/>
+</property>
+<property name="caHoc" type="string">
+<column length="11" name="cahoc"/>
+</property>
+<property name="phongHoc" type="string">
+<column length="20" name="phonghoc"/>
+</property>
+<property name="soTC" type="int">
+<column length="1" name="sotc"/>
+</property>
+<property name="giaoVienLyThuyet" type="string">
+<column length="8" name="giaovienlt"/>
+</property>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="dean"
+name="Pojo.TaiKhoanGV" table="taikhoangv">
+<id name="id" type="string">
+<column length="8" name="magv"/>
+<generator class="assigned"/>
+</id>
+<property name="tk" type="string">
+<column length="20" name="tk"/>
+</property>
+<property name="mk" type="string">
+<column length="20" name="mk"/>
+</property>
+</class>
+</hibernate-mapping>
