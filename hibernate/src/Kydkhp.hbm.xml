@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Kydkhp" table="kydkhp" schema="dean">
+        <composite-id mapped="true" class="pojo.KydkhpPK">
+            <key-property name="batDau">
+                <column name="batDau" sql-type="datetime"/>
+            </key-property>
+            <key-property name="hocKi">
+                <column name="hocKi" sql-type="char(3)" length="3"/>
+            </key-property>
+            <key-property name="namHoc">
+                <column name="namHoc" sql-type="varchar(10)" length="10"/>
+            </key-property>
+        </composite-id>
+        <property name="ketThuc">
+            <column name="ketThuc" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

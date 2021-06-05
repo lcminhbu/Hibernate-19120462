@@ -1,79 +1,82 @@
-package Pojo;
+package pojo;
+
+import java.util.Objects;
 
 public class Lop {
-	private int soSV;
-	private int soSVNu;
-	private int soSVNam;
-	private String tenLop;
-	private String maLop;
-	private String hocKi;
-	private String namHoc;
-	public Lop(int soSV, int soSVNu, int soSVNam, String tenLop, String maLop, String hocKi, String namHoc) {
-		this.soSV = soSV;
-		this.soSVNu = soSVNu;
-		this.soSVNam = soSVNam;
-		this.tenLop = tenLop;
-		this.maLop = maLop;
-		this.hocKi = hocKi;
-		this.namHoc = namHoc;
-	}
-	
-	public Lop() {}
+    private Integer soSv;
+    private Integer soSvNu;
+    private Integer soSvNam;
+    private String tenLop;
+    private String maLop;
+    private String hocKi;
+    private String namHoc;
 
-	public int getSoSV() {
-		return soSV;
-	}
+    public Integer getSoSv() {
+        return soSv;
+    }
 
-	public void setSoSV(int soSV) {
-		this.soSV = soSV;
-	}
+    public void setSoSv(Integer soSv) {
+        this.soSv = soSv;
+    }
 
-	public int getSoSVNu() {
-		return soSVNu;
-	}
+    public Integer getSoSvNu() {
+        return soSvNu;
+    }
 
-	public void setSoSVNu(int soSVNu) {
-		this.soSVNu = soSVNu;
-	}
+    public void setSoSvNu(Integer soSvNu) {
+        this.soSvNu = soSvNu;
+    }
 
-	public int getSoSVNam() {
-		return soSVNam;
-	}
+    public Integer getSoSvNam() {
+        return soSvNam;
+    }
 
-	public void setSoSVNam(int soSVNam) {
-		this.soSVNam = soSVNam;
-	}
+    public void setSoSvNam(Integer soSvNam) {
+        this.soSvNam = soSvNam;
+    }
 
-	public String getTenLop() {
-		return tenLop;
-	}
+    public String getTenLop() {
+        return tenLop;
+    }
 
-	public void setTenLop(String tenLop) {
-		this.tenLop = tenLop;
-	}
+    public void setTenLop(String tenLop) {
+        this.tenLop = tenLop;
+    }
 
-	public String getMaLop() {
-		return maLop;
-	}
+    public String getMaLop() {
+        return maLop;
+    }
 
-	public void setMaLop(String maLop) {
-		this.maLop = maLop;
-	}
+    public void setMaLop(String maLop) {
+        this.maLop = maLop;
+    }
 
-	public String getHocKi() {
-		return hocKi;
-	}
+    public String getHocKi() {
+        return hocKi;
+    }
 
-	public void setHocKi(String hocKi) {
-		this.hocKi = hocKi;
-	}
+    public void setHocKi(String hocKi) {
+        this.hocKi = hocKi;
+    }
 
-	public String getNamHoc() {
-		return namHoc;
-	}
+    public String getNamHoc() {
+        return namHoc;
+    }
 
-	public void setNamHoc(String namHoc) {
-		this.namHoc = namHoc;
-	}
-	
+    public void setNamHoc(String namHoc) {
+        this.namHoc = namHoc;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lop lop = (Lop) o;
+        return Objects.equals(soSv, lop.soSv) && Objects.equals(soSvNu, lop.soSvNu) && Objects.equals(soSvNam, lop.soSvNam) && Objects.equals(tenLop, lop.tenLop) && Objects.equals(maLop, lop.maLop) && Objects.equals(hocKi, lop.hocKi) && Objects.equals(namHoc, lop.namHoc);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(soSv, soSvNu, soSvNam, tenLop, maLop, hocKi, namHoc);
+    }
 }
