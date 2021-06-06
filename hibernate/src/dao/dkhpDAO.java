@@ -9,7 +9,7 @@ import pojo.Dangkyhocphan;
 import java.util.List;
 
 public class dkhpDAO {
-    public static List<Dangkyhocphan> getAllStudent() {
+    public static List<Dangkyhocphan> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Dangkyhocphan> dkhp = null;
         try {

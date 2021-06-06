@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <class name="pojo.Kydkhp" table="kydkhp" schema="dean">
-        <composite-id mapped="true" class="pojo.KydkhpPK">
+        <composite-id name="khoaChinh" class="pojo.KydkhpPK">
             <key-property name="batDau">
                 <column name="batDau" sql-type="datetime"/>
             </key-property>

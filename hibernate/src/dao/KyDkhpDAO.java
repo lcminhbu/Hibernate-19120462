@@ -9,7 +9,7 @@ import pojo.Kydkhp;
 import java.util.List;
 
 public class KyDkhpDAO {
-    public static List<Kydkhp> getAllStudent() {
+    public static List<Kydkhp> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Kydkhp> ky = null;
         try {

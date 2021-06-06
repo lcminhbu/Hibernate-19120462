@@ -9,7 +9,7 @@ import pojo.Hocki;
 import java.util.List;
 
 public class HocKiDAO {
-    public static List<Hocki> getAllStudent() {
+    public static List<Hocki> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Hocki> hk = null;
         try {

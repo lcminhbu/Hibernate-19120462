@@ -9,7 +9,7 @@ import pojo.Lop;
 import java.util.List;
 
 public class LopDAO {
-    public static List<Lop> getAllStudent() {
+    public static List<Lop> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Lop> l = null;
         try {

@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <class name="pojo.Hocki" table="hocki" schema="dean">
-        <composite-id mapped="true" class="pojo.HockiPK">
+        <composite-id name="khoaChinh" class="pojo.HockiPK">
             <key-property name="tenHocKi">
                 <column name="tenHocKi" sql-type="char(3)" length="3"/>
             </key-property>

@@ -1,24 +1,18 @@
 package pojo;
 
 import java.sql.Timestamp;
-import java.util.Objects;
 
 public class Sinhvien {
-    private String maSinhVien;
+
+    private SinhvienPK khoaChinh;
     private String hoTen;
     private String diaChi;
     private Timestamp ngaySinh;
     private String gioi;
     private String khoaHoc;
-    private String cmnd;
+    public SinhvienPK getKhoaChinh() { return khoaChinh; }
 
-    public String getMaSinhVien() {
-        return maSinhVien;
-    }
-
-    public void setMaSinhVien(String maSinhVien) {
-        this.maSinhVien = maSinhVien;
-    }
+    public void setKhoaChinh(SinhvienPK khoaChinh) { this.khoaChinh = khoaChinh; }
 
     public String getHoTen() {
         return hoTen;
@@ -58,26 +52,5 @@ public class Sinhvien {
 
     public void setKhoaHoc(String khoaHoc) {
         this.khoaHoc = khoaHoc;
-    }
-
-    public String getCmnd() {
-        return cmnd;
-    }
-
-    public void setCmnd(String cmnd) {
-        this.cmnd = cmnd;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sinhvien sinhvien = (Sinhvien) o;
-        return Objects.equals(maSinhVien, sinhvien.maSinhVien) && Objects.equals(hoTen, sinhvien.hoTen) && Objects.equals(diaChi, sinhvien.diaChi) && Objects.equals(ngaySinh, sinhvien.ngaySinh) && Objects.equals(gioi, sinhvien.gioi) && Objects.equals(khoaHoc, sinhvien.khoaHoc) && Objects.equals(cmnd, sinhvien.cmnd);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(maSinhVien, hoTen, diaChi, ngaySinh, gioi, khoaHoc, cmnd);
     }
 }

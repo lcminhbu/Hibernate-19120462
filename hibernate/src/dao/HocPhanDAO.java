@@ -9,7 +9,7 @@ import pojo.Hocphan;
 import java.util.List;
 
 public class HocPhanDAO {
-    public static List<Hocphan> getAllStudent() {
+    public static List<Hocphan> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Hocphan> hp = null;
         try {

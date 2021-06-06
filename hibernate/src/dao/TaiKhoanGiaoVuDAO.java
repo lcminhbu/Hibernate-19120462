@@ -9,7 +9,7 @@ import pojo.Taikhoangiaovu;
 import java.util.List;
 
 public class TaiKhoanGiaoVuDAO {
-    public static List<Taikhoangiaovu> getAllStudent() {
+    public static List<Taikhoangiaovu> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Taikhoangiaovu> tkgv = null;
         try {

@@ -9,7 +9,7 @@ import pojo.Giaovu;
 import java.util.List;
 
 public class GiaoVuDAO {
-    public static List<Giaovu> getAllStudent() {
+    public static List<Giaovu> selectAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Giaovu> gv = null;
         try {
