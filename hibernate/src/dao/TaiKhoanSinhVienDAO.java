@@ -23,4 +23,19 @@ public class TaiKhoanSinhVienDAO {
         }
         return tksv;
     }
+    public static List<Taikhoansinhvien> select(String tk) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Taikhoansinhvien> tksv = null;
+        try {
+            final String hql = "select tksv from Taikhoansinhvien tksv where tksv.tk=:tk";
+            Query query = session.createQuery(hql);
+            query.setParameter("tk", tk);
+            tksv = query.list();
+        } catch (HibernateException e) {
+            System.err.println(e);
+        } finally {
+            session.close();
+        }
+        return tksv;
+    }
 }
