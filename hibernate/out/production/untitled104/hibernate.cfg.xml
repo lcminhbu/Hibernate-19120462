@@ -5,17 +5,21 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dean</property>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
-        <mapping resource="Dangkyhocphan.hbm.xml"/>
         <mapping resource="Giaovu.hbm.xml"/>
         <mapping resource="Hocki.hbm.xml"/>
         <mapping resource="Hocphan.hbm.xml"/>
-        <mapping resource="Kydkhp.hbm.xml"/>
+        <mapping resource="HocphanDkhp.hbm.xml"/>
+        <mapping resource="Khoa.hbm.xml"/>
+        <mapping resource="Kidangkyhocphan.hbm.xml"/>
         <mapping resource="Lop.hbm.xml"/>
+        <mapping resource="Mon.hbm.xml"/>
+        <mapping resource="MonHocki.hbm.xml"/>
         <mapping resource="Sinhvien.hbm.xml"/>
+        <mapping resource="SinhvienHocphan.hbm.xml"/>
         <mapping resource="SinhvienLop.hbm.xml"/>
         <mapping resource="Taikhoangiaovu.hbm.xml"/>
         <mapping resource="Taikhoansinhvien.hbm.xml"/>

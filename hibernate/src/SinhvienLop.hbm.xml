@@ -4,23 +4,26 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.SinhvienLop" table="sinhvien_lop" schema="dean">
+    <class name="pojo.SinhvienLop" table="sinhvien_lop" schema="hibernate">
         <composite-id name="khoaChinh" class="pojo.SinhvienLopPK">
-            <key-property name="cmnd">
-                <column name="cmnd" sql-type="char(12)" length="12"/>
+            <key-property name="masinhvien">
+                <column name="masinhvien" sql-type="char(8)" length="8"/>
             </key-property>
-            <key-property name="maLop">
-                <column name="maLop" sql-type="char(8)" length="8"/>
-            </key-property>
-            <key-property name="hocKi">
-                <column name="hocKi" sql-type="char(3)" length="3"/>
-            </key-property>
-            <key-property name="namHoc">
-                <column name="namHoc" sql-type="varchar(10)" length="10"/>
+            <key-property name="id">
+                <column name="id" sql-type="int"/>
             </key-property>
         </composite-id>
-        <property name="maSinhVien">
-            <column name="maSinhVien" sql-type="char(8)" length="8" not-null="true"/>
+        <property name="hocki">
+            <column name="hocki" sql-type="char(3)" length="3" not-null="true"/>
+        </property>
+        <property name="namhoc">
+            <column name="namhoc" sql-type="char(9)" length="9" not-null="true"/>
+        </property>
+        <property name="mamon">
+            <column name="mamon" sql-type="char(5)" length="5" not-null="true"/>
+        </property>
+        <property name="mahocphan">
+            <column name="mahocphan" sql-type="char(6)" length="6" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

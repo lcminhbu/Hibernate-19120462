@@ -1,38 +1,56 @@
 package pojo;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 public class Hocki {
     private HockiPK khoaChinh;
-    private Timestamp ngayBatDau;
-    private Timestamp ngayKetThuc;
-    private Byte hocKiHienTai;
+    private Timestamp thoigianbatdau;
+    private Timestamp thoigianketthuc;
+    private Byte hockihientai;
+    private Set<Mon> monSet = new HashSet<Mon>(0);
 
     public HockiPK getKhoaChinh() { return khoaChinh; }
 
     public void setKhoaChinh(HockiPK khoaChinh) { this.khoaChinh = khoaChinh; }
 
-    public Timestamp getNgayBatDau() {
-        return ngayBatDau;
+    public Timestamp getThoigianbatdau() {
+        return thoigianbatdau;
     }
 
-    public void setNgayBatDau(Timestamp ngayBatDau) {
-        this.ngayBatDau = ngayBatDau;
+    public void setThoigianbatdau(Timestamp thoigianbatdau) {
+        this.thoigianbatdau = thoigianbatdau;
     }
 
-    public Timestamp getNgayKetThuc() {
-        return ngayKetThuc;
+    public Timestamp getThoigianketthuc() {
+        return thoigianketthuc;
     }
 
-    public void setNgayKetThuc(Timestamp ngayKetThuc) {
-        this.ngayKetThuc = ngayKetThuc;
+    public void setThoigianketthuc(Timestamp thoigianketthuc) {
+        this.thoigianketthuc = thoigianketthuc;
     }
 
-    public Byte getHocKiHienTai() {
-        return hocKiHienTai;
+    public Byte getHockihientai() {
+        return hockihientai;
     }
 
-    public void setHocKiHienTai(Byte hocKiHienTai) {
-        this.hocKiHienTai = hocKiHienTai;
+    public void setHockihientai(Byte hockihientai) {
+        this.hockihientai = hockihientai;
+    }
+
+    public Set<Mon> getMonSet() { return monSet; }
+
+    public void setMonSet(Set<Mon> monSet) { this.monSet = monSet; }
+
+    public Hocki() { }
+
+    public Hocki(HockiPK khoaChinh, Timestamp thoigianbatdau, Timestamp thoigianketthuc, Byte hockihientai, Set<Mon> monSet) {
+        this.khoaChinh = khoaChinh;
+        this.thoigianbatdau = thoigianbatdau;
+        this.thoigianketthuc = thoigianketthuc;
+        this.hockihientai = hockihientai;
+        this.monSet = monSet;
     }
 }

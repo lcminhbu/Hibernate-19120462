@@ -4,18 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Taikhoansinhvien" table="taikhoansinhvien" schema="dean">
-        <id name="cmnd">
-            <column name="cmnd" sql-type="char(12)" length="12"/>
+    <class name="pojo.Taikhoansinhvien" table="taikhoansinhvien" schema="hibernate">
+        <id name="taikhoan">
+            <column name="taikhoan" sql-type="char(30)" length="30"/>
         </id>
-        <property name="maSinhVien">
-            <column name="maSinhVien" sql-type="char(8)" length="8" not-null="true"/>
-        </property>
-        <property name="tk">
-            <column name="tk" sql-type="char(20)" length="20" not-null="true"/>
-        </property>
-        <property name="mk">
-            <column name="mk" sql-type="char(20)" length="20" not-null="true"/>
+        <many-to-one name="sinhvien" class="pojo.Giaovu" fetch="select" lazy="false">
+            <column name="masinhvien" length="8" not-null="true"></column>
+        </many-to-one>
+        <property name="matkhau">
+            <column name="matkhau" sql-type="char(30)" length="30" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -4,23 +4,23 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class HockiPK implements Serializable {
-    private String tenHocKi;
-    private String namHoc;
+    private String hocki;
+    private String namhoc;
 
-    public String getTenHocKi() {
-        return tenHocKi;
+    public String getHocki() {
+        return hocki;
     }
 
-    public void setTenHocKi(String tenHocKi) {
-        this.tenHocKi = tenHocKi;
+    public void setHocki(String hocki) {
+        this.hocki = hocki;
     }
 
-    public String getNamHoc() {
-        return namHoc;
+    public String getNamhoc() {
+        return namhoc;
     }
 
-    public void setNamHoc(String namHoc) {
-        this.namHoc = namHoc;
+    public void setNamhoc(String namhoc) {
+        this.namhoc = namhoc;
     }
 
     @Override
@@ -28,11 +28,11 @@ public class HockiPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HockiPK hockiPK = (HockiPK) o;
-        return Objects.equals(tenHocKi, hockiPK.tenHocKi) && Objects.equals(namHoc, hockiPK.namHoc);
+        return Objects.equals(hocki, hockiPK.hocki) && Objects.equals(namhoc, hockiPK.namhoc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tenHocKi, namHoc);
+        return Objects.hash(hocki, namhoc);
     }
 }

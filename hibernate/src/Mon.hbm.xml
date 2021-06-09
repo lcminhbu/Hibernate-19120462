@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Mon" table="mon" schema="hibernate">
+        <id name="mamon">
+            <column name="mamon" sql-type="char(5)" length="5"/>
+        </id>
+        <property name="sotinchi">
+            <column name="sotinchi" sql-type="int" not-null="true"/>
+        </property>
+        <set inverse="false" name="hockiSet" table="mon_hocki" lazy="false">
+            <key>
+                <column name="mamon" length="5" not-null="true"/>
+            </key>
+            <many-to-many entity-name="pojo.Hocki">
+                <column name="hocki" length="3" not-null="true"/>
+                <column name="namhoc" length="9" not-null="true"/>
+            </many-to-many>
+        </set>
+        <property name="tenmon">
+            <column name="tenmon" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="makhoa">
+            <column name="makhoa" sql-type="char(4)" length="4" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

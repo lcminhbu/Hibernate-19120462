@@ -4,38 +4,35 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Hocphan" table="hocphan" schema="dean">
+    <class name="pojo.Hocphan" table="hocphan" schema="hibernate">
         <composite-id name="khoaChinh" class="pojo.HocphanPK">
-            <key-property name="maHocPhan">
-                <column name="maHocPhan" sql-type="char(10)" length="10"/>
+            <key-property name="mahocphan">
+                <column name="mahocphan" sql-type="char(6)" length="6"/>
             </key-property>
-            <key-property name="hocKi">
-                <column name="hocKi" sql-type="char(3)" length="3"/>
-            </key-property>
-            <key-property name="namHoc">
-                <column name="namHoc" sql-type="varchar(10)" length="10"/>
-            </key-property>
+            <key-many-to-one name="mon" class="pojo.Mon" lazy="false">
+                <column name="mamon" length="5" not-null="true" />
+            </key-many-to-one>
         </composite-id>
-        <property name="tenHocPhan">
-            <column name="tenHocPhan" sql-type="varchar(50)" length="50" not-null="true"/>
+        <property name="sotinchi">
+            <column name="sotinchi" sql-type="int" not-null="true"/>
         </property>
-        <property name="soSlotToiDa">
-            <column name="soSlotToiDa" sql-type="int" not-null="true"/>
+        <property name="tenhocphan">
+            <column name="tenhocphan" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
-        <property name="ngayHoc">
-            <column name="ngayHoc" sql-type="varchar(10)" length="10" not-null="true"/>
+        <property name="giangvienlythuyet">
+            <column name="giangvienlythuyet" sql-type="char(8)" length="8" not-null="true"/>
         </property>
-        <property name="caHoc">
-            <column name="caHoc" sql-type="char(11)" length="11" not-null="true"/>
+        <property name="phonghoc">
+            <column name="phonghoc" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
-        <property name="phongHoc">
-            <column name="phongHoc" sql-type="varchar(20)" length="20" not-null="true"/>
+        <property name="ngayhoc">
+            <column name="ngayhoc" sql-type="varchar(8)" length="8" not-null="true"/>
         </property>
-        <property name="soTc">
-            <column name="soTC" sql-type="int" not-null="true"/>
+        <property name="cahoc">
+            <column name="cahoc" sql-type="varchar(11)" length="11" not-null="true"/>
         </property>
-        <property name="giaoVienLyThuyet">
-            <column name="giaoVienLyThuyet" sql-type="char(8)" length="8" not-null="true"/>
+        <property name="soslottoida">
+            <column name="soslottoida" sql-type="int" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

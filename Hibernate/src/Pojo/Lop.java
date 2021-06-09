@@ -1,45 +1,35 @@
 package pojo;
 
+import java.util.Objects;
+
 public class Lop {
-    private Integer soSv;
-    private Integer soSvNu;
-    private Integer soSvNam;
-    private String tenLop;
     private LopPK khoaChinh;
-
-    public Integer getSoSv() {
-        return soSv;
-    }
-
-    public void setSoSv(Integer soSv) {
-        this.soSv = soSv;
-    }
-
-    public Integer getSoSvNu() {
-        return soSvNu;
-    }
-
-    public void setSoSvNu(Integer soSvNu) {
-        this.soSvNu = soSvNu;
-    }
-
-    public Integer getSoSvNam() {
-        return soSvNam;
-    }
-
-    public void setSoSvNam(Integer soSvNam) {
-        this.soSvNam = soSvNam;
-    }
-
-    public String getTenLop() {
-        return tenLop;
-    }
-
-    public void setTenLop(String tenLop) {
-        this.tenLop = tenLop;
-    }
+    private Integer tongsinhvien;
+    private Integer tongsinhviennu;
+    private Integer tongsinhviennam;
 
     public LopPK getKhoaChinh() { return khoaChinh; }
 
     public void setKhoaChinh(LopPK khoaChinh) { this.khoaChinh = khoaChinh; }
+
+    public Integer getTongsinhvien() { return tongsinhvien; }
+
+    public void setTongsinhvien(Integer tongsinhvien) { this.tongsinhvien = tongsinhvien; }
+
+    public Integer getTongsinhviennu() { return tongsinhviennu; }
+
+    public void setTongsinhviennu(Integer tongsinhviennu) { this.tongsinhviennu = tongsinhviennu; }
+
+    public Integer getTongsinhviennam() { return tongsinhviennam; }
+
+    public void setTongsinhviennam(Integer tongsinhviennam) { this.tongsinhviennam = tongsinhviennam; }
+
+    public Lop(LopPK khoaChinh, Integer tongsinhvien, Integer tongsinhviennu, Integer tongsinhviennam) {
+        this.khoaChinh = khoaChinh;
+        this.tongsinhvien = tongsinhvien;
+        this.tongsinhviennu = tongsinhviennu;
+        this.tongsinhviennam = tongsinhviennam;
+    }
+
+    public Lop(){}
 }

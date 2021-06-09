@@ -3,44 +3,48 @@ package pojo;
 import java.util.Objects;
 
 public class Taikhoangiaovu {
-    private String maGiaoVu;
-    private String tk;
-    private String mk;
+    private Giaovu giaovu;
+    private String taikhoan;
+    private String matkhau;
 
-    public String getMaGiaoVu() {
-        return maGiaoVu;
+    public Giaovu getGiaovu() { return giaovu; }
+
+    public void setGiaovu(Giaovu giaovu) { this.giaovu = giaovu; }
+
+    public String getTaikhoan() {
+        return taikhoan;
     }
 
-    public void setMaGiaoVu(String maGiaoVu) {
-        this.maGiaoVu = maGiaoVu;
+    public void setTaikhoan(String taikhoan) {
+        this.taikhoan = taikhoan;
     }
 
-    public String getTk() {
-        return tk;
+    public String getMatkhau() {
+        return matkhau;
     }
 
-    public void setTk(String tk) {
-        this.tk = tk;
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
     }
 
-    public String getMk() {
-        return mk;
+    public Taikhoangiaovu(Giaovu giaovu, String taikhoan, String matkhau) {
+        this.giaovu = giaovu;
+        this.taikhoan = taikhoan;
+        this.matkhau = matkhau;
     }
 
-    public void setMk(String mk) {
-        this.mk = mk;
-    }
+    public Taikhoangiaovu(){}
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Taikhoangiaovu that = (Taikhoangiaovu) o;
-        return Objects.equals(maGiaoVu, that.maGiaoVu) && Objects.equals(tk, that.tk) && Objects.equals(mk, that.mk);
+        return Objects.equals(giaovu, that.giaovu) && Objects.equals(taikhoan, that.taikhoan) && Objects.equals(matkhau, that.matkhau);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maGiaoVu, tk, mk);
+        return Objects.hash(giaovu, taikhoan, matkhau);
     }
 }

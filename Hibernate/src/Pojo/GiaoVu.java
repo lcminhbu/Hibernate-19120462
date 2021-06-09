@@ -4,34 +4,44 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 public class Giaovu {
-    private String maGiaoVu;
-    private String hoTen;
-    private String diaChi;
+    private String magiaovu;
+    private String hoten;
+    private String diachi;
+    private String sdt;
     private String gioi;
-    private Timestamp ngaySinh;
+    private Timestamp ngaysinh;
+    private String makhoa;
 
-    public String getMaGiaoVu() {
-        return maGiaoVu;
+    public String getMagiaovu() {
+        return magiaovu;
     }
 
-    public void setMaGiaoVu(String maGiaoVu) {
-        this.maGiaoVu = maGiaoVu;
+    public void setMagiaovu(String magiaovu) {
+        this.magiaovu = magiaovu;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getHoten() {
+        return hoten;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setHoten(String hoten) {
+        this.hoten = hoten;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getDiachi() {
+        return diachi;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setDiachi(String diachi) {
+        this.diachi = diachi;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public String getGioi() {
@@ -42,24 +52,30 @@ public class Giaovu {
         this.gioi = gioi;
     }
 
-    public Timestamp getNgaySinh() {
-        return ngaySinh;
+    public Timestamp getNgaysinh() {
+        return ngaysinh;
     }
 
-    public void setNgaySinh(Timestamp ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setNgaysinh(Timestamp ngaysinh) {
+        this.ngaysinh = ngaysinh;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Giaovu giaovu = (Giaovu) o;
-        return Objects.equals(maGiaoVu, giaovu.maGiaoVu) && Objects.equals(hoTen, giaovu.hoTen) && Objects.equals(diaChi, giaovu.diaChi) && Objects.equals(gioi, giaovu.gioi) && Objects.equals(ngaySinh, giaovu.ngaySinh);
+    public String getMakhoa() {
+        return makhoa;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(maGiaoVu, hoTen, diaChi, gioi, ngaySinh);
+    public void setMakhoa(String makhoa) {
+        this.makhoa = makhoa;
     }
+
+    public Giaovu(String magiaovu, String hoten, String diachi, String sdt, String gioi, Timestamp ngaysinh, String makhoa) {
+        this.magiaovu = magiaovu;
+        this.hoten = hoten;
+        this.diachi = diachi;
+        this.sdt = sdt;
+        this.gioi = gioi;
+        this.ngaysinh = ngaysinh;
+        this.makhoa = makhoa;
+    }
+    public Giaovu(){ }
 }

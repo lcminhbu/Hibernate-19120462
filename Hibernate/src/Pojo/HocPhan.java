@@ -1,74 +1,86 @@
 package pojo;
 
-public class Hocphan {
+import java.util.Objects;
 
+public class Hocphan {
     private HocphanPK khoaChinh;
-    private String tenHocPhan;
-    private Integer soSlotToiDa;
-    private String ngayHoc;
-    private String caHoc;
-    private String phongHoc;
-    private Integer soTc;
-    private String giaoVienLyThuyet;
+    private Integer sotinchi;
+    private String tenhocphan;
+    private String giangvienlythuyet;
+    private String phonghoc;
+    private String ngayhoc;
+    private String cahoc;
+    private Integer soslottoida;
 
     public HocphanPK getKhoaChinh() { return khoaChinh; }
 
     public void setKhoaChinh(HocphanPK khoaChinh) { this.khoaChinh = khoaChinh; }
 
-    public String getTenHocPhan() {
-        return tenHocPhan;
+    public Integer getSotinchi() {
+        return sotinchi;
     }
 
-    public void setTenHocPhan(String tenHocPhan) {
-        this.tenHocPhan = tenHocPhan;
+    public void setSotinchi(Integer sotinchi) {
+        this.sotinchi = sotinchi;
     }
 
-    public Integer getSoSlotToiDa() {
-        return soSlotToiDa;
+    public String getTenhocphan() {
+        return tenhocphan;
     }
 
-    public void setSoSlotToiDa(Integer soSlotToiDa) {
-        this.soSlotToiDa = soSlotToiDa;
+    public void setTenhocphan(String tenhocphan) {
+        this.tenhocphan = tenhocphan;
     }
 
-    public String getNgayHoc() {
-        return ngayHoc;
+    public String getGiangvienlythuyet() {
+        return giangvienlythuyet;
     }
 
-    public void setNgayHoc(String ngayHoc) {
-        this.ngayHoc = ngayHoc;
+    public void setGiangvienlythuyet(String giangvienlythuyet) {
+        this.giangvienlythuyet = giangvienlythuyet;
     }
 
-    public String getCaHoc() {
-        return caHoc;
+    public String getPhonghoc() {
+        return phonghoc;
     }
 
-    public void setCaHoc(String caHoc) {
-        this.caHoc = caHoc;
+    public void setPhonghoc(String phonghoc) {
+        this.phonghoc = phonghoc;
     }
 
-    public String getPhongHoc() {
-        return phongHoc;
+    public String getNgayhoc() {
+        return ngayhoc;
     }
 
-    public void setPhongHoc(String phongHoc) {
-        this.phongHoc = phongHoc;
+    public void setNgayhoc(String ngayhoc) {
+        this.ngayhoc = ngayhoc;
     }
 
-    public Integer getSoTc() {
-        return soTc;
+    public String getCahoc() {
+        return cahoc;
     }
 
-    public void setSoTc(Integer soTc) {
-        this.soTc = soTc;
+    public void setCahoc(String cahoc) {
+        this.cahoc = cahoc;
     }
 
-    public String getGiaoVienLyThuyet() {
-        return giaoVienLyThuyet;
+    public Integer getSoslottoida() {
+        return soslottoida;
     }
 
-    public void setGiaoVienLyThuyet(String giaoVienLyThuyet) {
-        this.giaoVienLyThuyet = giaoVienLyThuyet;
+    public void setSoslottoida(Integer soslottoida) {
+        this.soslottoida = soslottoida;
     }
 
+    public Hocphan(Integer sotinchi, String tenhocphan, String giangvienlythuyet, String phonghoc, String ngayhoc, String cahoc, Integer soslottoida) {
+        this.sotinchi = sotinchi;
+        this.tenhocphan = tenhocphan;
+        this.giangvienlythuyet = giangvienlythuyet;
+        this.phonghoc = phonghoc;
+        this.ngayhoc = ngayhoc;
+        this.cahoc = cahoc;
+        this.soslottoida = soslottoida;
+    }
+
+    public Hocphan(){ };
 }

@@ -4,15 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Taikhoangiaovu" table="taikhoangiaovu" schema="dean">
-        <id name="maGiaoVu">
-            <column name="maGiaoVu" sql-type="char(8)" length="8"/>
+    <class name="pojo.Taikhoangiaovu" table="taikhoangiaovu" schema="hibernate">
+        <id name="taikhoan">
+            <column name="taikhoan" sql-type="varchar(30)" length="30"/>
         </id>
-        <property name="tk">
-            <column name="tk" sql-type="char(20)" length="20" not-null="true"/>
-        </property>
-        <property name="mk">
-            <column name="mk" sql-type="char(20)" length="20" not-null="true"/>
+        <many-to-one name="giaovu" class="pojo.Giaovu" fetch="select" lazy="false">
+            <column name="magiaovu" length="8" not-null="true"></column>
+        </many-to-one>
+        <property name="matkhau">
+            <column name="matkhau" sql-type="varchar(30)" length="30" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

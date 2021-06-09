@@ -4,29 +4,32 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Lop" table="lop" schema="dean">
+    <class name="pojo.Lop" table="lop" schema="hibernate">
         <composite-id name="khoaChinh" class="pojo.LopPK">
-            <key-property name="maLop">
-                <column name="maLop" sql-type="char(8)" length="8"/>
+            <key-property name="id">
+                <column name="id" sql-type="int"/>
             </key-property>
-            <key-property name="hocKi">
-                <column name="hocKi" sql-type="char(3)" length="3"/>
+            <key-property name="hocki">
+                <column name="hocki" sql-type="char(3)" length="3"/>
             </key-property>
-            <key-property name="namHoc">
-                <column name="namHoc" sql-type="varchar(10)" length="10"/>
+            <key-property name="namhoc">
+                <column name="namhoc" sql-type="char(9)" length="9"/>
+            </key-property>
+            <key-property name="mamon">
+                <column name="mamon" sql-type="char(5)" length="5"/>
+            </key-property>
+            <key-property name="mahocphan">
+                <column name="mahocphan" sql-type="char(6)" length="6"/>
             </key-property>
         </composite-id>
-        <property name="soSv">
-            <column name="soSV" sql-type="int" not-null="true"/>
+        <property name="tongsinhvien">
+            <column name="tongsinhvien" sql-type="int" not-null="true"/>
         </property>
-        <property name="soSvNu">
-            <column name="soSVNu" sql-type="int" not-null="true"/>
+        <property name="tongsinhviennu">
+            <column name="tongsinhviennu" sql-type="int" not-null="true"/>
         </property>
-        <property name="soSvNam">
-            <column name="soSVNam" sql-type="int" not-null="true"/>
-        </property>
-        <property name="tenLop">
-            <column name="tenLop" sql-type="varchar(50)" length="50" not-null="true"/>
+        <property name="tongsinhviennam">
+            <column name="tongsinhviennam" sql-type="int" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

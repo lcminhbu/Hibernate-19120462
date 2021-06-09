@@ -4,32 +4,50 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class LopPK implements Serializable {
-    private String maLop;
-    private String hocKi;
-    private String namHoc;
+    private int id;
+    private String hocki;
+    private String namhoc;
+    private String mamon;
+    private String mahocphan;
 
-    public String getMaLop() {
-        return maLop;
+    public int getId() {
+        return id;
     }
 
-    public void setMaLop(String maLop) {
-        this.maLop = maLop;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getHocKi() {
-        return hocKi;
+    public String getHocki() {
+        return hocki;
     }
 
-    public void setHocKi(String hocKi) {
-        this.hocKi = hocKi;
+    public void setHocki(String hocki) {
+        this.hocki = hocki;
     }
 
-    public String getNamHoc() {
-        return namHoc;
+    public String getNamhoc() {
+        return namhoc;
     }
 
-    public void setNamHoc(String namHoc) {
-        this.namHoc = namHoc;
+    public void setNamhoc(String namhoc) {
+        this.namhoc = namhoc;
+    }
+
+    public String getMamon() {
+        return mamon;
+    }
+
+    public void setMamon(String mamon) {
+        this.mamon = mamon;
+    }
+
+    public String getMahocphan() {
+        return mahocphan;
+    }
+
+    public void setMahocphan(String mahocphan) {
+        this.mahocphan = mahocphan;
     }
 
     @Override
@@ -37,11 +55,11 @@ public class LopPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LopPK lopPK = (LopPK) o;
-        return Objects.equals(maLop, lopPK.maLop) && Objects.equals(hocKi, lopPK.hocKi) && Objects.equals(namHoc, lopPK.namHoc);
+        return id == lopPK.id && Objects.equals(hocki, lopPK.hocki) && Objects.equals(namhoc, lopPK.namhoc) && Objects.equals(mamon, lopPK.mamon) && Objects.equals(mahocphan, lopPK.mahocphan);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maLop, hocKi, namHoc);
+        return Objects.hash(id, hocki, namhoc, mamon, mahocphan);
     }
 }

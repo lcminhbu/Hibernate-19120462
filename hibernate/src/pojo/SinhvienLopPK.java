@@ -4,41 +4,23 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class SinhvienLopPK implements Serializable {
-    private String cmnd;
-    private String maLop;
-    private String hocKi;
-    private String namHoc;
+    private String masinhvien;
+    private int id;
 
-    public String getCmnd() {
-        return cmnd;
+    public String getMasinhvien() {
+        return masinhvien;
     }
 
-    public void setCmnd(String cmnd) {
-        this.cmnd = cmnd;
+    public void setMasinhvien(String masinhvien) {
+        this.masinhvien = masinhvien;
     }
 
-    public String getMaLop() {
-        return maLop;
+    public int getId() {
+        return id;
     }
 
-    public void setMaLop(String maLop) {
-        this.maLop = maLop;
-    }
-
-    public String getHocKi() {
-        return hocKi;
-    }
-
-    public void setHocKi(String hocKi) {
-        this.hocKi = hocKi;
-    }
-
-    public String getNamHoc() {
-        return namHoc;
-    }
-
-    public void setNamHoc(String namHoc) {
-        this.namHoc = namHoc;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -46,11 +28,11 @@ public class SinhvienLopPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SinhvienLopPK that = (SinhvienLopPK) o;
-        return Objects.equals(cmnd, that.cmnd) && Objects.equals(maLop, that.maLop) && Objects.equals(hocKi, that.hocKi) && Objects.equals(namHoc, that.namHoc);
+        return id == that.id && Objects.equals(masinhvien, that.masinhvien);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cmnd, maLop, hocKi, namHoc);
+        return Objects.hash(masinhvien, id);
     }
 }

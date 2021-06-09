@@ -3,53 +3,48 @@ package pojo;
 import java.util.Objects;
 
 public class Taikhoansinhvien {
-    private String maSinhVien;
-    private String cmnd;
-    private String tk;
-    private String mk;
+    private Sinhvien sinhvien;
+    private String taikhoan;
+    private String matkhau;
 
-    public String getMaSinhVien() {
-        return maSinhVien;
+    public Sinhvien getSinhvien() { return sinhvien; }
+
+    public void setSinhvien(Sinhvien sinhvien) { this.sinhvien = sinhvien; }
+
+    public String getTaikhoan() {
+        return taikhoan;
     }
 
-    public void setMaSinhVien(String maSinhVien) {
-        this.maSinhVien = maSinhVien;
+    public void setTaikhoan(String taikhoan) {
+        this.taikhoan = taikhoan;
     }
 
-    public String getCmnd() {
-        return cmnd;
+    public String getMatkhau() {
+        return matkhau;
     }
 
-    public void setCmnd(String cmnd) {
-        this.cmnd = cmnd;
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
     }
 
-    public String getTk() {
-        return tk;
+    public Taikhoansinhvien(Sinhvien sinhvien, String taikhoan, String matkhau) {
+        this.sinhvien = sinhvien;
+        this.taikhoan = taikhoan;
+        this.matkhau = matkhau;
     }
 
-    public void setTk(String tk) {
-        this.tk = tk;
-    }
-
-    public String getMk() {
-        return mk;
-    }
-
-    public void setMk(String mk) {
-        this.mk = mk;
-    }
+    public Taikhoansinhvien(){}
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Taikhoansinhvien that = (Taikhoansinhvien) o;
-        return Objects.equals(maSinhVien, that.maSinhVien) && Objects.equals(cmnd, that.cmnd) && Objects.equals(tk, that.tk) && Objects.equals(mk, that.mk);
+        return Objects.equals(sinhvien, that.sinhvien) && Objects.equals(taikhoan, that.taikhoan) && Objects.equals(matkhau, that.matkhau);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maSinhVien, cmnd, tk, mk);
+        return Objects.hash(sinhvien, taikhoan, matkhau);
     }
 }

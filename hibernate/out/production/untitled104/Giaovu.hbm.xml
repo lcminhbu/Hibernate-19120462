@@ -4,21 +4,27 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Giaovu" table="giaovu" schema="dean">
-        <id name="maGiaoVu">
-            <column name="maGiaoVu" sql-type="char(8)" length="8"/>
+    <class name="pojo.Giaovu" table="giaovu" schema="hibernate">
+        <id name="magiaovu">
+            <column name="magiaovu" sql-type="char(8)" length="8"/>
         </id>
-        <property name="hoTen">
-            <column name="hoTen" sql-type="varchar(50)" length="50" not-null="true"/>
+        <property name="hoten">
+            <column name="hoten" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
-        <property name="diaChi">
-            <column name="diaChi" sql-type="varchar(100)" length="100" not-null="true"/>
+        <property name="diachi">
+            <column name="diachi" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sdt">
+            <column name="sdt" sql-type="char(10)" length="10" not-null="true"/>
         </property>
         <property name="gioi">
             <column name="gioi" sql-type="varchar(3)" length="3" not-null="true"/>
         </property>
-        <property name="ngaySinh">
-            <column name="ngaySinh" sql-type="datetime" not-null="true"/>
+        <property name="ngaysinh">
+            <column name="ngaysinh" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="makhoa">
+            <column name="makhoa" sql-type="varchar(4)" length="4" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

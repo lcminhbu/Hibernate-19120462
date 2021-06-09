@@ -4,44 +4,31 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class HocphanPK implements Serializable {
-    private String maHocPhan;
-    private String hocKi;
-    private String namHoc;
+    private String mahocphan;
+    private Mon mon;
 
-    public String getMaHocPhan() {
-        return maHocPhan;
+    public String getMahocphan() {
+        return mahocphan;
     }
 
-    public void setMaHocPhan(String maHocPhan) {
-        this.maHocPhan = maHocPhan;
+    public void setMahocphan(String mahocphan) {
+        this.mahocphan = mahocphan;
     }
 
-    public String getHocKi() {
-        return hocKi;
-    }
+    public Mon getMon() { return mon; }
 
-    public void setHocKi(String hocKi) {
-        this.hocKi = hocKi;
-    }
-
-    public String getNamHoc() {
-        return namHoc;
-    }
-
-    public void setNamHoc(String namHoc) {
-        this.namHoc = namHoc;
-    }
+    public void setMon(Mon mon) { this.mon = mon; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HocphanPK hocphanPK = (HocphanPK) o;
-        return Objects.equals(maHocPhan, hocphanPK.maHocPhan) && Objects.equals(hocKi, hocphanPK.hocKi) && Objects.equals(namHoc, hocphanPK.namHoc);
+        return Objects.equals(mahocphan, hocphanPK.mahocphan) && Objects.equals(mon, hocphanPK.mon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maHocPhan, hocKi, namHoc);
+        return Objects.hash(mahocphan, mon);
     }
 }
