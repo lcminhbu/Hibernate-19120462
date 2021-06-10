@@ -8,6 +8,7 @@ create table giaovu
     sdt char(10),
     gioi varchar(3) charset utf8mb4,
     ngaysinh datetime,
+    makhoa varchar(4),
     primary key (magiaovu)
 );
 create table taikhoangiaovu
@@ -17,6 +18,12 @@ create table taikhoangiaovu
 	matkhau varchar(30),
 	primary key (taikhoan)
 );
+create table khoa
+(
+	makhoa varchar(4),
+    tenkhoa varchar(50) charset utf8mb4,
+    primary key (makhoa)
+);
 create table sinhvien
 (
 	masinhvien char(8),
@@ -25,7 +32,7 @@ create table sinhvien
     sdt char(10),
     gioi varchar(3) charset utf8mb4,
     ngaysinh datetime,
-    khoa varchar(10),
+    makhoa varchar(4),
     primary key (masinhvien)
 );
 create table taikhoansinhvien
@@ -52,6 +59,7 @@ create table mon
 	mamon char(5),
     sotinchi int,
     tenmon varchar(50) charset utf8mb4,
+    makhoa char(4),
     primary key (mamon)
 );
 create table hocphan
@@ -120,6 +128,20 @@ create table sinhvien_hocphan
     thoigiandangki datetime,
     primary key (masinhvien, hocki, namhoc, mamon)
 );
+alter table giaovu
+add constraint fk_gv_k
+foreign key (makhoa)
+references khoa(makhoa);
+
+alter table sinhvien
+add constraint fk_sv_k
+foreign key (makhoa)
+references khoa(makhoa);
+
+alter table mon
+add constraint fk_m_k
+foreign key (makhoa)
+references khoa(makhoa);
 
 alter table taikhoangiaovu
 add constraint fk_tk_gv
@@ -224,33 +246,39 @@ alter table hocki
 add constraint c_ten_hk
 check(hocki in ('HK1', 'HK2', 'HK3'));
 
-insert into giaovu values ('00000001', 'Trần Văn Cao', '11 An Bình, Phường 10, Quận 5, TPHCM', '0772341827', 'Nam', '1980-12-10');
-insert into giaovu values ('00000002', 'Nguyễn Thị Bạch', '93 Lý Thường Kiệt, Phường 10, Quận 5, TPHCM', '0704928192', 'Nữ', '1979-10-21');
-insert into giaovu values ('00000003', 'Nguyễn Văn Thơm', '93 Bùi Tư Toàn, Phường 04, Quận Tân Bình, TPHCM', '0366718272', 'Nam', '1985-7-25');
+insert into khoa values ('CNTT', 'Công nghệ thông tin');
+insert into khoa values ('CNSH', 'Công nghệ sinh học');
+insert into khoa values ('TT', 'Toán-Tin học');
+insert into khoa values ('PDT', 'Phòng đào tạo');
+insert into khoa values ('MT', 'Môi trường');
+
+insert into giaovu values ('00000001', 'Trần Văn Cao', '11 An Bình, Phường 10, Quận 5, TPHCM', '0772341827', 'Nam', '1980-12-10', 'CNTT');
+insert into giaovu values ('00000002', 'Nguyễn Thị Bạch', '93 Lý Thường Kiệt, Phường 10, Quận 5, TPHCM', '0704928192', 'Nữ', '1979-10-21', 'CNSH');
+insert into giaovu values ('00000003', 'Nguyễn Văn Thơm', '93 Bùi Tư Toàn, Phường 04, Quận Tân Bình, TPHCM', '0366718272', 'Nam', '1985-7-25', 'TT');
 
 insert into taikhoangiaovu values ('00000001','00000001','00000001');
 insert into taikhoangiaovu values ('00000002','00000002','00000002');
 insert into taikhoangiaovu values ('00000003','00000003','00000003');
 
 insert into sinhvien values ('19120001', 'Trần Chí Thiện', '82 Hoàng Diệu 2, Phường Tam Bình, Quận Thủ Đức , TPHCM', '0704582473', 'Nam', '2001-12-20', 'CNTT');
-insert into sinhvien values ('19120426', 'Nguyễn Trần Bảo Nghi', '74 Đường số 13A, Phường Bình Trị Đông B, Quận Bình Tân, TPHCM', '0772618246', 'Nữ', '2000-10-21', 'CNTT');
+insert into sinhvien values ('19120426', 'Nguyễn Trần Bảo Nghi', '74 Đường số 13A, Phường Bình Trị Đông B, Quận Bình Tân, TPHCM', '0772618246', 'Nữ', '2000-10-21', 'CNSH');
 insert into sinhvien values ('19120482', 'Trần Văn Chí', '78 Vĩnh Lộc, Phường Bình Hưng Hòa, Quận Bình Tân, TPHCM', '0275849182', 'Nam', '1999-7-19', 'CNTT');
-insert into sinhvien values ('19120481', 'Nguyễn Kiều Trinh', '57 Đường D5, Phường 22, Quận Bình Thạnh, TPHCM', '0366471928', 'Nữ', '2001-4-30', 'CNTT');
+insert into sinhvien values ('19120481', 'Nguyễn Kiều Trinh', '57 Đường D5, Phường 22, Quận Bình Thạnh, TPHCM', '0366471928', 'Nữ', '2001-4-30', 'TT');
 
 insert into taikhoansinhvien values ('19120001', '19120001', '19120001');
 insert into taikhoansinhvien values ('19120426', '19120426', '19120426');
 insert into taikhoansinhvien values ('19120482', '19120482', '19120482');
 insert into taikhoansinhvien values ('19120481', '19120481', '19120481');
 
-insert into mon values ('00001', 4, 'Toán học tổ hợp');
-insert into mon values ('00002', 4, 'Kĩ thuật lập trình');
-insert into mon values ('00003', 3, 'Toán rời rạc');
-insert into mon values ('00004', 4, 'Cơ sở dữ liệu');
-insert into mon values ('00005', 2, 'Sinh học tế bào');
-insert into mon values ('00006', 4, 'Anh văn 4');
-insert into mon values ('00007', 4, 'Cấu trúc dữ liệu');
-insert into mon values ('00008', 2, 'Con người và môi trường');
-insert into mon values ('00009', 4, 'Đại số tuyến tính');
+insert into mon values ('00001', 4, 'Toán học tổ hợp', 'TT');
+insert into mon values ('00002', 4, 'Kĩ thuật lập trình', 'CNTT');
+insert into mon values ('00003', 3, 'Toán rời rạc', 'TT');
+insert into mon values ('00004', 4, 'Cơ sở dữ liệu', 'CNTT');
+insert into mon values ('00005', 2, 'Sinh học tế bào', 'CNSH');
+insert into mon values ('00006', 4, 'Anh văn 4', 'PDT');
+insert into mon values ('00007', 4, 'Cấu trúc dữ liệu', 'CNTT');
+insert into mon values ('00008', 2, 'Con người và môi trường', 'MT');
+insert into mon values ('00009', 4, 'Đại số tuyến tính', 'TT');
 
 insert into hocphan values ('000011','00001', 4, 'Toán học tổ hợp 19/1', '00000005', 'E305', 'Thứ bảy', '07:30-09:30', 120);
 insert into hocphan values ('000012', '00001', 4, 'Toán học tổ hợp 19/2', '00000004', 'E205', 'Thứ hai', '07:30-09:30', 120);

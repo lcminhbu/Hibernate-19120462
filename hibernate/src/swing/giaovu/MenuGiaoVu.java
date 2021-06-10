@@ -1,7 +1,5 @@
 package swing.giaovu;
 
-import dao.GiaoVuDAO;
-import dao.TaiKhoanGiaoVuDAO;
 import pojo.Giaovu;
 import pojo.Taikhoangiaovu;
 
@@ -12,42 +10,108 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuGiaoVu {
-    public MenuGiaoVu(){
-        JFrame menu=new JFrame("Menu");
-        JButton info=new JButton("Xem thong tin");
-        JButton changePass=new JButton("Thay doi mat khau");
-        JButton logout=new JButton("Dang xuat");
-        JButton giaoVuList=new JButton("Danh sach giao vu");
-        JButton monHocList = new JButton("Danh sach mon hoc");
-        JButton danhSachHocKi = new JButton("Danh sach hoc ki");
-        JButton danhSachSinhVien = new JButton("Danh sach sinh vien");
-        JButton kyDKHP = new JButton("Ky dang ky hoc phan");
-        JButton danhSachHocPhan = new JButton("Danh sach hoc phan");
-        info.addActionListener(new ActionListener() {
+    public MenuGiaoVu(List<Giaovu> dsgv, List<Taikhoangiaovu> tkgv, Taikhoangiaovu gvHienTai){
+        JPanel top=new JPanel();
+        JPanel center=new JPanel();
+        JFrame menu=new JFrame();
+        menu.setLayout(new BorderLayout());
+        menu.add(top, BorderLayout.NORTH);
+        menu.add(center, BorderLayout.CENTER);
+        JLabel hello=new JLabel("Xin chào " + gvHienTai.getGiaovu().getHoten());
+        JButton thongTin=new JButton("Thông tin");
+        thongTin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<Giaovu> gv= GiaoVuDAO.selectAll();
-                new ThongTin(gv.get(0));
+                new ThongTin(gvHienTai.getGiaovu());
             }
         });
-        changePass.addActionListener(new ActionListener() {
+        thongTin.setSize(40,20);
+        JButton doiMatKhau=new JButton("Đổi mật khẩu");
+        doiMatKhau.setSize(40,20);
+        doiMatKhau.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<Taikhoangiaovu> gv= TaiKhoanGiaoVuDAO.selectAll();
-                new DoiMatKhau(gv.get(0));
+                new DoiMatKhau(gvHienTai);
             }
         });
-        menu.setSize(400,200);
-        menu.add(info);
-        menu.add(changePass);
-        menu.add(logout);
-        menu.add(giaoVuList);
-        menu.add(monHocList);
-        menu.add(danhSachHocKi);
-        menu.add(danhSachSinhVien);
-        menu.add(kyDKHP);
-        menu.add(danhSachHocPhan);
-        menu.setLayout(new FlowLayout());
+
+        JButton dangXuat=new JButton("Đăng xuất");
+        top.add(hello);
+        top.add(thongTin);
+        top.add(doiMatKhau);
+        top.add(dangXuat);
+        top.setLayout(new FlowLayout());
+
+        JButton dsSinhVien=new JButton("Danh sách sinh viên");
+        dsSinhVien.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachSinhVien();
+            }
+        });
+        center.add(dsSinhVien);
+
+        JButton dsGiaoVu = new JButton("Danh sách giáo vụ");
+        dsGiaoVu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachGiaoVu(dsgv, tkgv);
+            }
+        });
+
+        center.add(dsGiaoVu);
+
+        JButton dsHocKi=new JButton("Danh sách học kì");
+        dsHocKi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachHocKi();
+            }
+        });
+
+        center.add(dsHocKi);
+
+        JButton dsHocPhan=new JButton("Danh sách học phần");
+        dsHocPhan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachHocPhan();
+            }
+        });
+
+        center.add(dsHocPhan);
+
+        JButton dsKiDKHP=new JButton("Danh sách kì DKHP");
+        dsKiDKHP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachKiDKHP();
+            }
+        });
+
+        center.add(dsKiDKHP);
+
+        JButton dsLop=new JButton("Danh sách lớp");
+        dsLop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachLop();
+            }
+        });
+
+        center.add(dsLop);
+
+        JButton dsMon=new JButton("Danh sách môn học");
+        dsMon.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new DanhSachMonHoc();
+            }
+        });
+
+        center.add(dsMon);
+        center.setLayout(new GridLayout(3,2,20,20));
+        menu.setSize(800,400);
         menu.setVisible(true);
     }
 }
