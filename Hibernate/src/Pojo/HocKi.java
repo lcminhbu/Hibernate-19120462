@@ -53,4 +53,8 @@ public class Hocki {
         this.hockihientai = hockihientai;
         this.monSet = monSet;
     }
+
+    public String hocKiVaNam(){
+        return this.khoaChinh.getHocki()+" "+this.khoaChinh.getNamhoc();
+    }
 }

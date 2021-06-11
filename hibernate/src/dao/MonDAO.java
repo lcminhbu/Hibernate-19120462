@@ -14,14 +14,14 @@ public class MonDAO {
     public static List<Mon> selectAll(){
         return Command.selectAll(new Mon());
     }
-    public static List<Mon> select(String mamon){
+    public static Mon select(String mamon){
         Session session = HibernateUtil.getSessionFactory().openSession();
-        List<Mon> mon = null;
+        Mon mon = null;
         try {
             final String hql = "select s from Mon s where s.mamon=:ms";
             Query query = session.createQuery(hql);
             query.setParameter("ms", mamon);
-            mon = query.list();
+            mon = (Mon)query.uniqueResult();
         } catch (HibernateException e) {
             System.err.println(e);
         } finally {
@@ -31,7 +31,7 @@ public class MonDAO {
     }
     public static boolean add(Mon m){
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if(select(m.getMamon()).size()!=0)
+        if(select(m.getMamon())!=null)
         {
             return false;
         }
@@ -54,6 +54,19 @@ public class MonDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try{
             session.remove(m);
+            session.beginTransaction().commit();
+        }catch(HibernateException e){
+            System.err.println(e);
+            return false;
+        }finally{
+            session.close();
+        }
+        return true;
+    }
+    public static boolean update(Mon m){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            session.update(m);
             session.beginTransaction().commit();
         }catch(HibernateException e){
             System.err.println(e);

@@ -4,6 +4,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import pojo.Hocki;
 import pojo.Sinhvien;
 import util.HibernateUtil;
 
@@ -25,5 +26,13 @@ public class Command <T> {
             session.close();
         }
         return data;
+    }
+    public static Hocki hocKiHienTai(List<Hocki> dshk) {
+        for (int i = 0; i < dshk.size(); i++) {
+            if (dshk.get(i).getHockihientai() == 1) {
+                return dshk.get(i);
+            }
+        }
+        return null;
     }
 }

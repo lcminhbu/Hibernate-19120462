@@ -23,6 +23,11 @@ public class HockiPK implements Serializable {
         this.namhoc = namhoc;
     }
 
+    public HockiPK(String hocki, String namhoc) {
+        this.hocki = hocki;
+        this.namhoc = namhoc;
+    }
+    public HockiPK(){}
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

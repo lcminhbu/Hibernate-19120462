@@ -51,11 +51,6 @@ public class DanhSachGiaoVu {
         pnl.add(findlb);
         pnl.add(tf);
         find.add(pnl, BorderLayout.NORTH);
-        Object data[][]=new Object[tkgv.size()][];
-        for(int i=0;i<tkgv.size();i++){
-            Object dat[]={tkgv.get(i).getGiaovu().getMagiaovu(), tkgv.get(i).getGiaovu().getHoten(), tkgv.get(i).getTaikhoan()};
-            data[i]=dat;
-        }
         DefaultTableModel model=new DefaultTableModel();
         JTable table=new JTable(model);
         model.addColumn("Mã giáo vụ");

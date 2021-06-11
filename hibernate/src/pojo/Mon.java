@@ -11,6 +11,7 @@ public class Mon {
     private String makhoa;
     private Set<Hocki> hockiSet = new HashSet<Hocki>(0);
 
+
     public Set<Hocki> getHockiSet() { return hockiSet; }
 
     public void setHockiSet(Set<Hocki> hockiSet) { this.hockiSet = hockiSet; }

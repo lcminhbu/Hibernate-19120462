@@ -33,6 +33,12 @@ public class KidangkyhocphanPK implements Serializable {
         this.thoigianbatdau = thoigianbatdau;
     }
 
+    public KidangkyhocphanPK(String hocki, String namhoc, Timestamp thoigianbatdau) {
+        this.hocki = hocki;
+        this.namhoc = namhoc;
+        this.thoigianbatdau = thoigianbatdau;
+    }
+    public KidangkyhocphanPK(){}
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
